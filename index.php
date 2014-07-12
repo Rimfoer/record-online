@@ -34,13 +34,16 @@ if(isset($_GET['from'])) {
 		<script src="js/jquery.mousewheel.js"></script>
 		<script src="js/jquery.jscrollpane.min.49px.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/cufon.js"></script>
+		<script src="js/PF_DinText_Pro_Medium_500.font.js"></script>
+		<script>Cufon.replace(['.dintext-font'], {});</script>
 		
 		<script src="js/openapi.js"></script>
 		<script>VK.init({apiId: 3733168, onlyWidgets: true});</script>
 		<script src="js/date.js"></script>
 		<script src="js/waveform.js"></script>
 		
-		<script src="js/SoundManager2/script/soundmanager2.js"></script>
+		<script src="js/soundmanagerv297a-20131201/soundmanager2-nodebug-jsmin.js"></script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -156,12 +159,12 @@ if(isset($_GET['from'])) {
 			</div>
 		</div>
 		<script>
-			if (!$.Storage.get('record_volume')) { $.Storage.set('record_volume', '60'); }	// проверяем наличие сохраненного уровня громкости, если нет - создаем
+			if (!$.Storage.get('record_volume')) { $.Storage.set('record_volume', '50'); }	// проверяем наличие сохраненного уровня громкости, если нет - создаем
 			var sm_volume = parseInt($.Storage.get('record_volume'));	// заполняем глобальную переменную громкости
 			var sm_err_counter = 0;	// счетчик ошибок
 			var url = 'http://air.radiorecord.ru:8101/rr_320';	// стандартная ссылка на поток, необходима для корректной инициализации плеера
 			soundManager.setup({	// инициализируем плеер
-				url: 'js/SoundManager2/swf/',	// адрес флеш-файлов
+				url: 'js/soundmanagerv297a-20131201/swf/',	// адрес флеш-файлов
 				flashVersion: 9,	// версия флеш
 				preferFlash: true,	// предпочитаем использовать именно флеш
 				useHighPerformance: true,	// включаем повышенный приоритет flash для улучшения whileplaying и EQ
